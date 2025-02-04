@@ -46,7 +46,7 @@ const SearchableDropdown = ({
       {isSearchable && (
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full p-2 border-b border-gray-300 focus:outline-none"
