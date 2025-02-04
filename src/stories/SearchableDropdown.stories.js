@@ -23,4 +23,7 @@ MultiSelectInput.args = {
   withSearch: true,
   onChange: () => {},
   outlined: false,
+  id: 'sdd-1',
+  portal: true,
+  optionLabel: 'Input',
 };

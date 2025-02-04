@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import SelectedItem from "../SelectedItem";
   
 function SearchableDropdown({
+    id = 'sdd-1',
     options = [],
     multiple = true,
     withSearch = true,
@@ -129,7 +130,7 @@ function SearchableDropdown({
 	};
 
 	return (
-		<div className="user-search-container">
+		<div key={id} className="user-search-container">
             {optionLabel && (
                 <label for={optionLabel}>
                     {optionLabel}

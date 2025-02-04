@@ -18,11 +18,14 @@ const App = () => {
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">Searchable Dropdown</h1>
       <SearchableDropdown
+        id={'sdd-1'}
         options={options}
         onSelect={handleSelect}
         multiple={true}
         withSearch={true}
         outlined={false}
+        portal={true}
+        optionLabel={'Input'}
       />
     </div>
   );
