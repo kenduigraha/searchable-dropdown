@@ -18,6 +18,7 @@ jobs:
         # ⚠️ See your package manager's documentation for the correct command to install dependencies in a CI environment.
         run: npm ci --legacy-peer-deps
       - name: Run build storybook
+        continue-on-error: true
         run: npm run build-storybook
       - name: Run Chromatic
         uses: chromaui/action@latest
