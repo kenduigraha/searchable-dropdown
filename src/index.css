@@ -123,3 +123,7 @@ input[type=number]:focus {
 .suggestions-list li.active {
   background-color: #ccc;
 }
+
+.bg-highlight {
+  background: #68bbe3;
+}
