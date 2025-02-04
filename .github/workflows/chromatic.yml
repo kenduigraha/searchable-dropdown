@@ -10,12 +10,16 @@ jobs:
   chromatic:
     name: 'Run Chromatic'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
     # Job steps
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - run: yarn
+        working-directory: frontend
         #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@latest
         # Options required for Chromatic's GitHub Action
