@@ -25,6 +25,11 @@ body {
   line-height: 50px;
 }
 
+input[type=number]:focus {
+  outline-color: green;
+  outline-style: solid;
+}
+
 .user-search-container label {
   width: 80px;
   text-align: center;
@@ -41,14 +46,28 @@ body {
   border-radius: 20px;
 }
 
-.user-search-input .hide {
-  display: none;
+.user-search-input .input-wrapper {
+  width: 100%;
+}
+
+.user-search-input.outline {
+  background: gray;
+}
+
+.search__outlined {
+  color: white;
+  background: gray;
 }
 
 .user-search-input input {
   border: none;
   height: 20px;
   padding: 5px;
+  width: 100%;
+}
+
+.user-search-input.outline input::placeholder {
+  color: white;
 }
 
 .user-search-input input:focus {

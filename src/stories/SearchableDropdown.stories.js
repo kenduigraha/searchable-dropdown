@@ -19,7 +19,8 @@ MultiSelectInput.args = {
     { id: 5, value: "5", label: "Elderberry", icon: "🫐" },
   ],
   onSelect: (option) => console.log("Selected:", option),
-  isMultiSelect: true,
+  multiple: true,
   withSearch: true,
   onChange: () => {},
+  outlined: false,
 };

@@ -13,7 +13,7 @@ function SearchableDropdown({
     onChange = () => {},
   }) {
     const [open, setOpen] = useState(false);
-	const [searchTerm, setSearchTerm] = useState("");
+	const [searchInput, setSearchInput] = useState("");
 	const [selectedData, setselectedData] = useState([]);
 	const [selectedDataSet, setselectedDataSet] = useState(new Set());
 	const [activeSuggestion, setActiveSuggestion] = useState(0);
@@ -59,7 +59,7 @@ function SearchableDropdown({
 
         setOpen(!open);
         
-        setSearchTerm(e.target.value);
+        setSearchInput(e.target.value);
 
         onChange(e);
     }
@@ -67,7 +67,7 @@ function SearchableDropdown({
         if (multiple) {
             // prevent double selection
             const result = [...selectedData, data].reduce((acc, item) => {
-                if (!acc.find(other => item.id == other.id)) {
+                if (!acc.find(other => item.id === other.id)) {
                     acc.push(item);
                 }
                     return acc;  
@@ -80,7 +80,7 @@ function SearchableDropdown({
             setselectedDataSet(new Set([data.id]));
         }
 		
-        setSearchTerm("");
+        setSearchInput("");
         inputRef.current.focus();
 	};
 
@@ -135,7 +135,7 @@ function SearchableDropdown({
                     {optionLabel}
                 </label>
             )}
-			<div className="user-search-input">
+			<div className={`user-search-input ${outlined ? "outline" : ''}`}>
 				{selectedData.map((data) => {
 					return (
 						<SelectedItem
@@ -146,11 +146,12 @@ function SearchableDropdown({
 					);
 				})}
 				{/* input field with search suggestions */}
-				<div>
+				<div className="input-wrapper">
 					<input
+                        className={`${outlined ? 'search__outlined' : ''}`}
 						ref={inputRef}
 						type="text"
-						value={searchTerm}
+						value={searchInput}
                         onClick={() => setOpen(!open)}
 						onChange={(e) => handleOnChange(e)}
 						placeholder="Search..."

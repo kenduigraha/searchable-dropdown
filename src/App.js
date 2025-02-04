@@ -20,8 +20,9 @@ const App = () => {
       <SearchableDropdown
         options={options}
         onSelect={handleSelect}
-        isMultiSelect={true}
+        multiple={true}
         withSearch={true}
+        outlined={false}
       />
     </div>
   );
