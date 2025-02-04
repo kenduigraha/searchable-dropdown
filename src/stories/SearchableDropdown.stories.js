@@ -1,5 +1,6 @@
 import React from "react";
 import SearchableDropdown from "../components/SearchableDropdown/SearchableDropdown";
+import './index.css';
 
 export default {
   title: "Components/SearchableDropdown",
